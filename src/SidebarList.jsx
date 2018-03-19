@@ -6,7 +6,17 @@ class SidebarList extends Component{
         super(props)
         this.handleChildActive=this.handleChildActive.bind(this)
         this.handleChildOpen=this.handleChildOpen.bind(this)
-        this.state={activeIndex:null,openIndex:null}
+        this.state={activeIndex:null,openIndex:null,toggle:''}
+    }
+    componentWillReceiveProps(nextProps){
+        if (nextProps.toggle && nextProps.toggle !== this.props.toggle) {
+            this.setState((prevState,props)=>({toggle:true}))
+            return
+        }
+        if (!nextProps.toggle && nextProps.toggle !== this.props.toggle) {
+            this.setState((prevState,props)=>({toggle:false}))
+            return
+        }
     }
     handleChildActive(activeIndex){
         this.setState((prevState,props)=>({activeIndex}))
@@ -16,7 +26,7 @@ class SidebarList extends Component{
     }
     render(){
         return(
-            <ul className={['sidebar',this.props.className].join(' ')}>
+            <ul className={['sidebar',this.props.className,this.state.toggle?'toggle':''].join(' ')}>
                 {
                     React.Children.map(this.props.children,(child,index)=>{
                         return React.cloneElement(child,{

@@ -37,7 +37,6 @@ class SidebarItem extends Component{
         return(
             <li onClick={this.clickHandler} className={['sidebar-item',this.state.activeClassName,this.props.className].join(' ')}>
                 <Link to={this.props.to}>
-                <span>
                 {
                     this.props.icon ?
                     this.props.icon
@@ -47,6 +46,8 @@ class SidebarItem extends Component{
                         <path d="M0 0h24v24H0z" fill="none" />
                     </svg>
                 }
+                <span>
+                
                 {this.props.label}
                 </span>
                 </Link>

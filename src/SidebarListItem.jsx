@@ -40,7 +40,7 @@ class SidebarListItem extends Component {
     }
     render() {
         const listStyle = {
-            display: this.state.display
+            maxHeight: this.state.display ? '6.5rem' : 0
         }
         return (
             <li onClick={this.handleClick} className={['sidebar-item', this.state.activeClassName, this.props.className, this.state.display ? 'open' : ''].join(' ')}>
@@ -65,14 +65,8 @@ class SidebarListItem extends Component {
                         <path d="M0 0h24v24H0z" fill="none" />
                     </svg>
                 </span>
-                <CSSTransitionGroup
-                    transitionName="list"
-                    transitionEnterTimeout={300}
-                    transitionLeaveTimeout={300}
-                >
-                    {
-                        this.state.display &&
-                        <ul style={{ ...this.props.style }} key={1} className={['sidebarListItem', this.props.className].join(' ')}>
+                
+                        <ul style={{...this.props.style }} key={1} className={['sidebarListItem', this.props.className].join(' ')}>
                             {
                                 React.Children.map(this.props.children, (child, index) => {
                                     return React.cloneElement(child, {
@@ -89,8 +83,6 @@ class SidebarListItem extends Component {
                                 })
                             }
                         </ul>
-                    }
-                </CSSTransitionGroup>
 
             </li>
 
