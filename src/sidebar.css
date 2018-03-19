@@ -1,0 +1,140 @@
+.sidebar{
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    position: relative;
+    left:0;
+    height: 100%;
+    background-color: #9E9E9E;
+    max-width: 300px;
+    min-width: 230px;
+    color: white;
+    margin-top: 0px;
+    font-size: 14px
+}
+.sidebar a {
+    color: white
+}
+.sidebarListItem{
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    position: relative;
+}
+.sidebarListItem .sidebarListItem .sidebar-item > *:first-child{
+    padding-left: 30px
+}
+.sidebar-item:hover{
+    /* background-color: #ccc;
+    transition: 0.3s ease; */
+}
+.sidebar-item a{
+    display: block
+}
+.sidebar-item a,.sidebar-item .listItem-label {
+    text-transform: capitalize;
+    line-height: 20px;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+.activeList > .listItem-label:first-child{
+    background-color: #ffff;
+    color: black;
+}
+.sidebarListItem .activeList > .listItem-label:first-child{
+    background-color: #ccc;
+    color: white;
+}
+.activeList .listItem-label:hover{
+    background-color: #ffff;
+    color: black;
+}
+.active a{
+    background-color: #ffff;
+    color: black;
+  }
+  .activeList > .listItem-label > #chevron{
+    fill: black;
+  }
+  
+  .sidebarListItem .active a{
+    background-color: #ccc;
+    color: white;
+  }
+  .sidebar-item > *:first-child{
+    cursor: pointer;
+  }
+  .sidebar-item > a:hover{
+    background-color: #ccc;
+  }
+  .sidebar > .sidebar-item > a:hover{
+    background-color: #ffff;
+    color: black;
+  }
+  .sidebar-item > span:hover{
+    background-color: #ccc;
+  }
+  .sidebar > .sidebar-item > span:hover{
+    background-color: #ffff;
+    color: black;
+  }
+  .active.sidebar-item *:first-child:hover{
+    background-color: #ffff;
+    color: black;
+  }
+  .sidebarListItem .active.sidebar-item *:first-child:hover{
+    background-color: #ccc;
+    color: white;
+  }
+  .listItem-label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+  }
+  .listItem-label:hover > #chevron,#chevron:hover{
+      color: black;
+      fill: black;
+  }
+  #chevron{
+      fill:white;
+      transition: transform 300ms ease;
+      width: 14px;
+      height: 14px;
+  }
+  .sidebar .open > .listItem-label > #chevron{
+    transform:rotateZ(90deg)
+  }
+  .sidebar .open > .sidebarListItem{
+    
+  }
+  #default-icon{
+      vertical-align: middle;
+      margin-right: 20px;
+      width: 14px;
+      height: 14px;
+  }
+  .list-enter{
+    transform: scaleY(0);
+  }
+  .list-enter.list-enter-active{
+    transform: scaleY(1);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease
+  }
+  .list-leave{
+    transform: scaleY(1);
+  }
+  .list-leave.list-leave-active{
+    transform: scaleY(0);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease
+  }
+  
